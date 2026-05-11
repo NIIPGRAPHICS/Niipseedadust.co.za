@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIIPSEEDADUST // BOOKINGS 2000</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@300;700&display=swap');
+
+        :root {
+            --neon-green: #00ff41;
+            --cyber-blue: #00f3ff;
+            --y2k-pink: #ff00ff;
+        }
+
+        body {
+            background-color: #000;
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Scanline Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .y2k-border {
+            border: 4px double var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green), inset 0 0 15px var(--neon-green);
+        }
+
+        .glossy-btn {
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 100%), var(--neon-green);
+            border-radius: 50px;
+            color: black;
+            font-weight: 900;
+            transition: 0.3s;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+        }
+
+        .glossy-btn:hover {
+            transform: scale(1.05) rotate(-2deg);
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .marquee-container {
+            background: var(--neon-green);
+            color: black;
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
+            padding: 5px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .pixel-text {
+            font-family: 'VT323', monospace;
+            color: var(--neon-green);
+            text-transform: uppercase;
+        }
+
+        .window-header {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            padding: 4px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .record-spin {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="marquee-container mb-8 y2k-border">
+        <marquee scrollamount="10">
+            NOW BOOKING: NIIPSEEDADUST // AFRO-TECH // GQOM // AMAPIANO // SOUL DUST RECORDS ELITE // 2026 WORLD TOUR // 
+        </marquee>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <div class="md:col-span-4 space-y-6">
+            <div class="y2k-border p-2 bg-black relative">
+                <div class="window-header mb-2">
+                    <span>ARTIST_PROFILE.EXE</span>
+                    <span>[?] [X]</span>
+                </div>
+                <img src="niipseedadust.jpg" alt="Niipseedadust" class="w-full grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="mt-4 p-4 border-t border-green-900">
+                    <h1 class="text-4xl font-black italic text-white leading-none">NIIPSEEDADUST</h1>
+                    <p class="pixel-text mt-2">Level: International Producer/DJ</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase tracking-widest">Affiliation: Soul Dust Records</p>
+                </div>
+            </div>
+
+            <div class="y2k-border p-4 bg-zinc-900/80 backdrop-blur-md">
+                <p class="pixel-text text-xs mb-4">Latest_Release.wav</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center record-spin">
+                        <div class="w-4 h-4 bg-black rounded-full"></div>
+                    </div>
+                    <div class="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
+                        <div class="w-2/3 h-full bg-green-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-8">
+            <div class="y2k-border bg-black/80 p-6 md:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-20 text-6xl font-black pixel-text">2000</div>
+                
+                <h2 class="text-5xl font-black italic mb-8 border-b-4 border-green-500 inline-block">BOOK THE VIBE</h2>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="pixel-text text-sm">Full Name / Promoter</label>
+                            <input type="text" placeholder="ENTER NAME..." class="w-full bg-transparent border-2 border-green-900 p-3 focus:border-green-400 outline-none transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="pixel-text text-sm">Event Date</label>
+                            <input type="date" class="w-full bg-transparent border-2 border-green-900 p-3 focus:border-green-400 outline-none text-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="pixel-text text-sm">Location (City)</label>
+                            <input type="text" placeholder="DURBAN, JHB, ETC..." class="w-full bg-transparent border-2 border-green-900 p-3 focus:border-green-400 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="pixel-text text-sm">Set Length</label>
+                            <select class="w-full bg-transparent border-2 border-green-900 p-3 focus:border-green-400 outline-none">
+                                <option class="bg-black">60 MINS</option>
+                                <option class="bg-black">90 MINS</option>
+                                <option class="bg-black">2 HOURS</option>
+                                <option class="bg-black">ALL NIGHT</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="pixel-text text-sm">Event Type / Message</label>
+                        <textarea rows="4" placeholder="TELL ME ABOUT THE EVENT..." class="w-full bg-transparent border-2 border-green-900 p-3 focus:border-green-400 outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="glossy-btn w-full py-5 text-xl tracking-[0.2em] uppercase">
+                        Initialize Booking Request
+                    </button>
+                </form>
+
+                <div class="mt-12 flex justify-center gap-8 border-t border-green-900 pt-8">
+                    <a href="#" class="pixel-text hover:text-white transition">Instagram</a>
+                    <a href="#" class="pixel-text hover:text-white transition">SoundCloud</a>
+                    <a href="#" class="pixel-text hover:text-white transition">Spotify</a>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-4">
+                <div class="y2k-border p-4 text-center hover:bg-green-500 hover:text-black cursor-pointer transition group">
+                    <span class="pixel-text group-hover:text-black">DOWNLOAD EPK</span>
+                </div>
+                <div class="y2k-border p-4 text-center hover:bg-blue-500 hover:text-black cursor-pointer transition group" style="border-color: var(--cyber-blue);">
+                    <span class="pixel-text group-hover:text-black" style="color: var(--cyber-blue);">WATCH LIVE SETS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-center mt-20 text-[10px] text-gray-600 font-bold uppercase tracking-[0.8em]">
+        POWERED BY SOUL DUST RECORDS // GLOBAL ASSET 2026
+    </p>
+
+</body>
+  </html>
